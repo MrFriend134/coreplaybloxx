@@ -1,0 +1,289 @@
+/**
+ * CorePlayBlox - Componentes adicionales
+ *
+ * Estilos para avatar, catálogo, amigos, editor, etc.
+ */
+
+/* ========== AVATAR EDITOR ========== */
+.avatar-editor {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .avatar-editor {
+    grid-template-columns: 1fr;
+  }
+}
+
+.avatar-preview-3d {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  aspect-ratio: 1;
+  max-height: 500px;
+  position: relative;
+}
+.avatar-preview-3d canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: var(--border-radius-lg);
+}
+
+.avatar-controls {
+  background: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+}
+.control-group {
+  margin-bottom: var(--spacing-lg);
+}
+.control-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========== CATALOG ========== */
+.catalog-filters {
+  margin-bottom: var(--spacing-lg);
+}
+.catalog-filters select {
+  min-width: 180px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.catalog-item {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-lg);
+  transition: all 0.2s;
+}
+.catalog-item:hover {
+  border-color: var(--color-primary);
+}
+.catalog-item-thumb {
+  aspect-ratio: 1;
+  background: var(--bg-elevated);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.catalog-item-name {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+.catalog-item-price {
+  color: var(--color-primary-light);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+.catalog-item-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  min-height: 2.5em;
+}
+
+/* ========== FRIENDS ========== */
+.friends-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.friends-search {
+  display: flex;
+  gap: var(--spacing-md);
+  max-width: 400px;
+}
+.friends-search input {
+  flex: 1;
+}
+
+.friends-list,
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.friend-item,
+.search-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+.friend-item-avatar,
+.search-result-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+.friend-item-info,
+.search-result-info {
+  flex: 1;
+  margin-left: var(--spacing-md);
+}
+.friend-item-name,
+.search-result-name {
+  font-weight: 600;
+}
+.friend-item-username,
+.search-result-username {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ========== SETTINGS ========== */
+.settings-panel {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.setting-group {
+  background: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+}
+.setting-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+.setting-group input {
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+.setting-group .btn {
+  margin-right: var(--spacing-sm);
+}
+
+/* ========== EDITOR ========== */
+.editor-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  gap: var(--spacing-md);
+  z-index: 10;
+}
+
+.editor-layout {
+  display: flex;
+  height: 100%;
+  padding-top: 48px;
+}
+
+.editor-sidebar {
+  width: 260px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+.editor-sidebar h3 {
+  font-size: 0.95rem;
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  color: var(--text-secondary);
+}
+.editor-sidebar h3:first-child {
+  margin-top: 0;
+}
+
+.object-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.property-panel {
+  font-size: 0.9rem;
+}
+.property-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+.property-row label {
+  color: var(--text-secondary);
+}
+.property-row input {
+  width: 80px;
+  padding: var(--spacing-xs);
+}
+
+.editor-canvas-container {
+  flex: 1;
+  position: relative;
+}
+.editor-canvas-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ========== GAME RUNTIME ========== */
+.game-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  z-index: 10;
+}
+.game-title {
+  margin-left: var(--spacing-md);
+  font-weight: 600;
+}
+
+.game-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.game-canvas-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ========== EMPTY STATE ========== */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+}
